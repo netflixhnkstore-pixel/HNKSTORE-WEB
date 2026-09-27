@@ -1,0 +1,67 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HNKSTORE — Premium Digital Store</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="topbar"><div class="container nav">
+<a class="brand" href="#">HNK<span>STORE</span><small>PREMIUM DIGITAL STORE</small></a>
+<nav class="navlinks"><a class="active" href="#">⌂ Home</a><a href="#produk">◈ Produk</a><a href="#cara">▣ Cara Pembelian</a><a href="#testimoni">☆ Testimoni</a><a href="#faq">? FAQ</a></nav>
+<div class="search"><input id="search" placeholder="Cari produk..."><button>⌕</button></div><button class="cart">🛒 <sup>0</sup></button><a class="login" href="admin.html">➤ Masuk</a>
+</div></header>
+<main>
+<section class="hero"><a href="#produk"><img src="assets/hero-demo.jpg" alt="Banner promo HNKSTORE"></a></section>
+<div class="container">
+<section id="categoryRow" class="category-row"></section>
+<section id="produk"><div class="section-head"><div><h2>🔥 Produk Terlaris</h2><p>Pilih paket sesuai kebutuhan kamu.</p></div><a class="viewall" href="#produk">Lihat Semua Produk →</a></div><div id="productGrid" class="products"></div></section>
+<section id="cara" class="steps">
+<div class="step"><strong style="font-size:20px">🛒 &nbsp;Cara Pembelian</strong><span>Proses cepat dan mudah, hanya 4 langkah.</span></div>
+<div class="step"><strong><span class="stepnum">1</span> Pilih Produk</strong><span>Pilih paket yang kamu inginkan.</span></div>
+<div class="step"><strong><span class="stepnum">2</span> Lakukan Pembayaran</strong><span>Bayar dengan metode yang tersedia.</span></div>
+<div class="step"><strong><span class="stepnum">3</span> Pesanan Diproses</strong><span>Kami proses pesanan kamu.</span></div>
+<div class="step"><strong><span class="stepnum">4</span> Akun Diterima</strong><span>Akun dikirim setelah pembayaran.</span></div>
+</section>
+<section id="testimoni" style="padding:10px 0 30px"><div class="section-head"><div><h2>☆ Testimoni Pelanggan</h2><p>Ulasan pelanggan HNKSTORE.</p></div></div><div id="testimonialGrid" class="category-row"></div></section>
+<section id="faq" style="padding:10px 0 30px"><div class="section-head"><div><h2>? FAQ</h2><p>Pertanyaan umum pelanggan.</p></div></div><div class="category-row">
+<div class="category"><div class="grow"><h3>Berapa lama akun diterima?</h3><p>Demo: otomatis setelah status pembayaran berhasil.</p></div></div>
+<div class="category"><div class="grow"><h3>Apakah ada garansi?</h3><p>Setiap produk dapat memiliki ketentuan garansi berbeda.</p></div></div>
+<div class="category"><div class="grow"><h3>Bagaimana cek pesanan?</h3><p>Demo berikutnya bisa dihubungkan ke Telegram ID pelanggan.</p></div></div>
+</div></section>
+</div></main>
+<footer><div class="container">© 2026 HNKSTORE • Premium Digital Store • Demo UI, belum terhubung ke pembayaran nyata.</div></footer>
+<div id="buyModal" class="modal"><div class="modalbox"><h2 id="modalTitle">Checkout</h2><div class="field"><label>Produk</label><input id="modalProduct" readonly></div><div class="field"><label>Jumlah</label><input id="qty" type="number" min="1" value="1"></div><div class="field"><label>Total</label><div id="modalPrice" style="font-size:24px;color:var(--cyan);font-weight:900"></div></div><div class="modal-actions"><button class="ghost" onclick="closeModal()">Batal</button><button class="buy" onclick="checkoutDemo()">Buat Pesanan Demo</button></div></div></div>
+<div id="toast" class="toast"></div>
+<script>const __SEED__={"products": [{"id": "netflix-1p1d", "category": "Netflix", "name": "Private 1P1D", "price": 34000, "desc": "1 Profile milik sendiri • 1 Perangkat • Akun Private • Garansi 28 hari", "status": "Aktif", "stock": 8, "logo": "N", "accent": "red"}, {"id": "netflix-1p2d", "category": "Netflix", "name": "Private 1P2D", "price": 37500, "desc": "1 Profile milik sendiri • 2 Perangkat • Akun Private • Garansi 28 hari", "status": "Aktif", "stock": 5, "logo": "N", "accent": "red"}, {"id": "netflix-sharing", "category": "Netflix", "name": "Sharing", "price": 20000, "desc": "1 Profile Sharing • Harga lebih hemat • Stabil & Aman • Garansi 28 hari", "status": "Aktif", "stock": 14, "logo": "N", "accent": "red"}, {"id": "netflix-email", "category": "Netflix", "name": "Private (Email Sendiri)", "price": 39000, "desc": "Bisa ganti email • Full akses • 1 Perangkat • Garansi 28 hari", "status": "Aktif", "stock": 3, "logo": "N", "accent": "red"}, {"id": "canva-premium", "category": "Canva", "name": "Premium 1 Bulan", "price": 15000, "desc": "Akses Canva Premium • Template premium • Garansi sesuai ketentuan", "status": "Aktif", "stock": 12, "logo": "C", "accent": "cyan"}, {"id": "capcut-premium", "category": "CapCut", "name": "Premium 1 Bulan", "price": 12000, "desc": "Akses CapCut Premium • Fitur premium • Garansi sesuai ketentuan", "status": "Aktif", "stock": 9, "logo": "C", "accent": "cyan"}], "orders": [{"id": "HNK-DEMO-001", "buyer": "@demo_user", "product": "Netflix Private 1P1D", "qty": 1, "total": 34000, "status": "Lunas", "date": "27 Sep 2026 14:42"}, {"id": "HNK-DEMO-002", "buyer": "@hana_demo", "product": "Canva Premium 1 Bulan", "qty": 1, "total": 15000, "status": "Menunggu", "date": "27 Sep 2026 14:36"}, {"id": "HNK-DEMO-003", "buyer": "@rio_store", "product": "Netflix Sharing", "qty": 2, "total": 40000, "status": "Lunas", "date": "27 Sep 2026 14:21"}], "buyers": [{"id": "940859227", "username": "@hanchan2", "transactions": 3, "spent": 94000}, {"id": "100238901", "username": "@demo_user", "transactions": 1, "spent": 34000}, {"id": "100238902", "username": "@hana_demo", "transactions": 1, "spent": 15000}], "banners": [{"id": "banner-1", "name": "Promo Utama", "title": "AKUN PREMIUM HARGA BERSAHABAT", "target": "#produk", "active": true, "image": "assets/hero-demo.jpg"}], "settings": {"storeName": "HNKSTORE", "adminName": "HNKSTORE Admin", "telegram": "@hanstorebot", "payment": "NORTH QRIS"}};</script><script>
+const KEY="hnkstore_demo_state";
+const seed=__SEED__;
+function state(){let s=localStorage.getItem(KEY);if(!s){localStorage.setItem(KEY,JSON.stringify(seed));return structuredClone(seed)}return JSON.parse(s)}
+function save(s){localStorage.setItem(KEY,JSON.stringify(s))}
+const money=n=>"Rp "+Number(n).toLocaleString("id-ID");
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+function logo(p){return p.logoImage
+ ? `<div class="logo custom-logo"><img src="${p.logoImage}" alt="${esc(p.category)}"></div>`
+ : `<div class="logo ${p.category==='Netflix'?'net':p.category==='Canva'?'canva':'capcut'}">${p.logo}</div>`}
+function renderProducts(filter=""){
+ const s=state(); const arr=s.products.filter(p=>(p.status==="Aktif") && (!filter || (p.name+" "+p.category).toLowerCase().includes(filter.toLowerCase())));
+ document.querySelector("#productGrid").innerHTML=arr.map((p,i)=>`
+ <article class="card" id="${p.id}">${i===0&&!filter?'<div class="badge">BEST SELLER</div>':''}
+  <div class="cardtop">${logo(p)}<div><div style="font-size:12px;color:#91a9b2">${esc(p.category)}</div><h3>${esc(p.name)}</h3></div></div>
+  <ul class="features">${p.desc.split("•").map(x=>`<li>${esc(x.trim())}</li>`).join("")}</ul>
+  <div class="price">${money(p.price)} <small>/ bulan</small></div>
+  <button class="buy" onclick="buy('${p.id}')">🛒 &nbsp; Beli Sekarang</button>
+ </article>`).join("") || `<div style="grid-column:1/-1;color:#9fb3bd;padding:30px;text-align:center">Produk tidak ditemukan.</div>`;
+}
+function renderCategories(){
+ const s=state(); const cats=[["Netflix","Akun Streaming","N"],["Canva","Akun Desain","C"],["CapCut","Akun Editing","C"]];
+ document.querySelector("#categoryRow").innerHTML=cats.map(c=>`<a class="category" href="#produk" onclick="filterCat('${c[0]}')">${c[2]==="N"?'<div class="logo net">N</div>':c[0]==="Canva"?'<div class="logo canva">Canva</div>':'<div class="logo capcut">✦</div>'}<div class="grow"><h3>${c[0]}</h3><p>${c[1]}</p></div><div class="arrow">›</div></a>`).join("");
+}
+function renderTestimonials(){
+ const s=state();
+ document.querySelector("#testimonialGrid").innerHTML=s.testimonials.length ? s.testimonials.map(t=>`
+ <div class="category"><div class="grow"><h3>${esc(t.name)}</h3><p class="stars">${"★".repeat(Math.max(1,Math.min(5,t.rating)))}<span>${"★".repeat(5-Math.max(1,Math.min(5,t.rating)))}</span></p><p>“${esc(t.text)}”</p></div></div>`).join("") :
+ `<div style="grid-column:1/-1;color:#9fb3bd;padding:20px;text-align:center">Belum ada testimoni.</div>`;
+}
+function filterCat(cat){document.querySelector("#search").value=cat;renderProducts(cat);document.querySelector("#produk").scrollIntoView()}
+function buy(id){const p=state().products.find(x=>x.id===id);if(!p)return;document.querySelector("#modalTitle").textContent=p.category+" "+p.name;document.querySelector("#modalProduct").value=p.id;document.querySelector("#modalPrice").textContent=money(p.price);document.querySelector("#qty").value=1;document.querySelector("#buyModal").classList.add("show")}
+function closeModal(){document.querySelector("#buyModal").classList.remove("show")}
+function checkoutDemo(){const s=state();const id=document.querySelector("#modalProduct").value;const p=s.products.find(x=>x.id===id);const q=Math.max(1,parseInt(document.querySelector("#qty").value||1));if(q>p.stock){alert("Stok demo tidak mencukupi.");return}const o={id:"HNK-DEMO-"+Date.now().toString().slice(-6),buyer:"Guest Website",product:p.category+" "+p.name,qty:q,total:p.price*q,status:"Menunggu",date:new Date().toLocaleString("id-ID")};s.orders.unshift(o);save(s);closeModal();toast("Checkout demo dibuat. Status: Menunggu.");}
+function toast(t){const x=document.querySelector("#toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2500)}
+document.querySelector("#search").addEventListener("input",e=>renderProducts(e.target.value));
+renderCategories();renderProducts();renderTestimonials();
+</script></body></html>
